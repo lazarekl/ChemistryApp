@@ -21,6 +21,7 @@ public class MainWin extends javax.swing.JFrame {
     public static String percentMassVals = null;
     public static HashMap<String, String> Elements = new HashMap<String, String>();
     public static HashMap<String, Integer> sigFig = new HashMap<String, Integer>();
+    public static HashMap<String, String> elemtGrid = new HashMap<String, String>();
     
     JLabel imgL;
     /**
@@ -240,7 +241,7 @@ public class MainWin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Molar Mass Calculator");
         setLocationByPlatform(true);
-        setPreferredSize(new java.awt.Dimension(722, 330));
+        setPreferredSize(new java.awt.Dimension(900, 330));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -302,9 +303,15 @@ public class MainWin extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(13, 30, 140, 16);
 
-        PTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Package/periodic_table_of_elements.jpg"))); // NOI18N
+        PTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Package/Periodic-TableEdited.png"))); // NOI18N
+        PTable.setPreferredSize(new java.awt.Dimension(900, 289));
+        PTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PTableMouseClicked(evt);
+            }
+        });
         getContentPane().add(PTable);
-        PTable.setBounds(260, 10, 438, 260);
+        PTable.setBounds(250, 10, 640, 290);
 
         jLabel7.setText("Formula");
         getContentPane().add(jLabel7);
@@ -484,6 +491,7 @@ public class MainWin extends javax.swing.JFrame {
             percentMassVals = null;
             MainWin.infoBox("Unable to parse formula. This may be because you have used parenthesis. \nPlease remember that parenthesis should be removed and coefficients distributed before entering the formula.", "Error");
         }catch(Exception e){
+            e.printStackTrace();
             FullMa.setText("ERR");
             percentMassVals = null;
             MainWin.infoBox("Unable to parse formula. Please check syntax.", "Error");
@@ -584,6 +592,13 @@ public class MainWin extends javax.swing.JFrame {
         InfoWin.setVisible(false);
     }//GEN-LAST:event_InfoDoneBActionPerformed
 
+    private void PTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PTableMouseClicked
+        int x = evt.getX();
+        int y = evt.getY();
+        Full.setText(Full.getText() + getClickedElement(x, y));
+            
+    }//GEN-LAST:event_PTableMouseClicked
+
     public static void infoBox(String infoMessage, String header)
     {
         JOptionPane.showMessageDialog(null, infoMessage, header, JOptionPane.PLAIN_MESSAGE);
@@ -592,6 +607,12 @@ public class MainWin extends javax.swing.JFrame {
     public static String round(String percentStr, int newSigFig){
         String roundDigitStr = percentStr.substring(newSigFig - 1, newSigFig);
         String compDigitStr = percentStr.substring(newSigFig, newSigFig + 1);
+        if(roundDigitStr.equals(".")){
+            roundDigitStr = percentStr.substring(newSigFig - 2, newSigFig - 1);
+        }
+        if(compDigitStr.equals(".")){
+            compDigitStr = percentStr.substring(newSigFig + 1, newSigFig + 2);
+        }
         int compDigit = Integer.valueOf(compDigitStr);      //digit after digit to be rounded
         int roundDigit = Integer.valueOf(roundDigitStr);    //digit to be rounded
         if(compDigit < 5){
@@ -638,127 +659,316 @@ public class MainWin extends javax.swing.JFrame {
         }
     }
     
+    public static String getClickedElement(int x, int y){
+        int xCase = 0;
+        int yCase = 0;
+        if(x >= 0 && x <= 34){
+             xCase = 1;
+        }else if(x >= 37 && x <= 70){
+            xCase = 2;
+        }else if(x >= 73 && x <= 104){
+            xCase = 3;
+        }else if(x >= 108 && x <= 141){
+            xCase = 4;
+        }else if(x >= 144 && x <= 176){
+            xCase = 5;
+        }else if(x >= 180 && x <= 212){
+            xCase = 6;
+        }else if(x >= 215 && x <= 247){
+            xCase = 7;
+        }else if(x >= 250 && x <= 283){
+            xCase = 8;
+        }else if(x >= 286 && x <= 318){
+            xCase = 9;
+        }else if(x >= 321 && x <= 354){
+            xCase = 10;
+        }else if(x >= 357 && x <= 389){
+            xCase = 11;
+        }else if(x >= 392 && x <= 424){
+            xCase = 12;
+        }else if(x >= 428 && x <= 460){
+            xCase = 13;
+        }else if(x >= 463 && x <= 496){
+            xCase = 14;
+        }else if(x >= 499 && x <= 532){
+            xCase = 15;
+        }else if(x >= 535 && x <= 566){
+            xCase = 16;
+        }else if(x >= 569 && x <= 602){
+            xCase = 17;
+        }else if(x >= 606 && x <= 639){
+            xCase = 18;
+        }
+        
+        if(y >= 0 && y <= 32){
+            yCase = 1;
+        }else if(y >= 34 && y <= 63){
+            yCase = 2;
+        }else if(y >= 66 && y <= 93){
+            yCase = 3;
+        }else if(y >= 97 && y <= 124){
+            yCase = 4;
+        }else if(y >= 126 && y <= 155){
+            yCase = 5;
+        }else if(y >= 157 && y <= 185){
+            yCase = 6;
+        }else if(y >= 188 && y <= 216){
+            yCase = 7;
+        }else if(y >= 223 && y <= 252){
+            yCase = 8;
+        }else if(y >= 255 && y <= 283){
+            yCase = 9;
+        }
+        
+        if(yCase == 0 || xCase == 0){
+            return "";
+        }else{
+            String elSymbol = elemtGrid.get(Integer.toString(xCase) + ":" + Integer.toString(yCase));
+            return elSymbol == null ? "" : elSymbol;
+        }
+    }
+    
     public static void initElements(){
         Elements.put("H", "1.008");
+        elemtGrid.put("1:1", "H");
         Elements.put("Li", "6.941");
+        elemtGrid.put("1:2", "Li");
         Elements.put("Na", "22.99");
+        elemtGrid.put("1:3", "Na");
         Elements.put("K", "39.10");
+        elemtGrid.put("1:4", "K");
         Elements.put("Rb", "85.47");
+        elemtGrid.put("1:5", "Rb");
         Elements.put("Cs", "132.9");
+        elemtGrid.put("1:6", "Cs");
         Elements.put("Fr", "223.");
+        elemtGrid.put("1:7", "Fr");
         Elements.put("Be", "9.012");
+        elemtGrid.put("2:2", "Be");
         Elements.put("Mg", "24.31");
+        elemtGrid.put("2:3", "Mg");
         Elements.put("Ca", "40.08");
+        elemtGrid.put("2:4", "Ca");
         Elements.put("Sr", "87.62");
+        elemtGrid.put("2:5", "Sr");
         Elements.put("Ba", "137.3");
+        elemtGrid.put("2:6", "Ba");
         Elements.put("Ra", "226.");
+        elemtGrid.put("2:7", "Ra");
         Elements.put("Sc", "44.96");
+        elemtGrid.put("3:4", "Sc");
         Elements.put("Y", "88.91");
+        elemtGrid.put("3:5", "Y");
         Elements.put("Lu", "175.0");
+        elemtGrid.put("17:8", "Lu");
         Elements.put("Lr", "262");
+        elemtGrid.put("17:9", "Lr");
         Elements.put("Ti", "47.88");
+        elemtGrid.put("4:4", "Ti");
         Elements.put("Zr", "91.22");
+        elemtGrid.put("4:5", "Zr");
         Elements.put("Hf", "178.5");
+        elemtGrid.put("4:6", "Hf");
         Elements.put("Rf", "261.");
+        elemtGrid.put("4:7", "Rf");
         Elements.put("V", "50.94");
+        elemtGrid.put("5:4", "V");
         Elements.put("Nb", "92.91");
+        elemtGrid.put("5:5", "Nb");
         Elements.put("Ta", "180.9");
+        elemtGrid.put("5:6", "Ta");
         Elements.put("Db", "262.");
+        elemtGrid.put("5:7", "Db");
         Elements.put("Cr", "52.00");
+        elemtGrid.put("6:4", "Cr");
         Elements.put("Mo", "95.94");
+        elemtGrid.put("6:5", "Mo");
         Elements.put("W", "183.9");
+        elemtGrid.put("6:6", "W");
         Elements.put("Sg", "263.");
+        elemtGrid.put("6:7", "Sg");
         Elements.put("Mn", "54.94");
+        elemtGrid.put("7:4", "Mn");
         Elements.put("Tc", "98");
+        elemtGrid.put("7:5", "Tc");
         Elements.put("Re", "186.2");
+        elemtGrid.put("7:6", "Re");
         Elements.put("Bh", "264.");
+        elemtGrid.put("7:7", "Bh");
         Elements.put("Fe", "55.85");
+        elemtGrid.put("8:4", "Fe");
         Elements.put("Ru", "101.1");
+        elemtGrid.put("8:5", "Ru");
         Elements.put("Os", "190.2");
+        elemtGrid.put("8:6", "Os");
         Elements.put("Hs", "265.");
+        elemtGrid.put("8:7", "Hs");
         Elements.put("Co", "58.93");
+        elemtGrid.put("9:4", "Co");
         Elements.put("Rh", "102.9");
+        elemtGrid.put("9:5", "Rh");
         Elements.put("Ir", "192.2");
+        elemtGrid.put("9:6", "Ir");
         Elements.put("Mt", "268.");
+        elemtGrid.put("9:7", "Mt");
         Elements.put("Ni", "58.69");
+        elemtGrid.put("10:4", "Ni");
         Elements.put("Pd", "106.4");
+        elemtGrid.put("10:5", "Pd");
         Elements.put("Pt", "195.1");
+        elemtGrid.put("10:6", "Pt");
         Elements.put("Ds", "271.");
+        elemtGrid.put("10:7", "Ds");
         Elements.put("Cu", "63.55");
+        elemtGrid.put("11:4", "Cu");
         Elements.put("Ag", "107.9");
+        elemtGrid.put("11:5", "Ag");
         Elements.put("Au", "197.0");
+        elemtGrid.put("11:6", "Au");
         Elements.put("Rg", "272.");
+        elemtGrid.put("11:7", "Rg");
         Elements.put("Zn", "65.38");
+        elemtGrid.put("12:4", "Zn");
         Elements.put("Cd", "112.4");
+        elemtGrid.put("12:5", "Cd");
         Elements.put("Hg", "200.6");
+        elemtGrid.put("12:6", "Hg");
         Elements.put("Cn", "285.");
+        elemtGrid.put("12:7", "Cn");
         Elements.put("B", "10.81");
+        elemtGrid.put("13:2", "B");
         Elements.put("Al", "26.98");
+        elemtGrid.put("13:3", "Al");
         Elements.put("Ga", "69.72");
+        elemtGrid.put("13:4", "Ga");
         Elements.put("Ln", "114.8");
+        elemtGrid.put("13:5", "Ln");
         Elements.put("Tl", "204.4");
+        elemtGrid.put("13:6", "Tl");
         Elements.put("Uut", "284.");
+        elemtGrid.put("13:7", "Uut");
         Elements.put("C", "12.01");
+        elemtGrid.put("14:2", "C");
         Elements.put("Si", "28.09");
+        elemtGrid.put("14:3", "Si");
         Elements.put("Ge", "72.59");
+        elemtGrid.put("14:4", "Ge");
         Elements.put("Sn", "118.7");
+        elemtGrid.put("14:5", "Sn");
         Elements.put("Pb", "207.2");
-        Elements.put("Uuq", "289.");
+        elemtGrid.put("14:6", "Pb");
+        Elements.put("Fl", "289.");
+        elemtGrid.put("14:7", "Fl");
         Elements.put("N", "14.01");
+        elemtGrid.put("15:2", "N");
         Elements.put("P", "30.97");
+        elemtGrid.put("15:3", "P");
         Elements.put("As", "74.92");
+        elemtGrid.put("15:4", "As");
         Elements.put("Sb", "121.8");
+        elemtGrid.put("15:5", "Sb");
         Elements.put("Bi", "209.0");
+        elemtGrid.put("15:6", "Bi");
         Elements.put("Uup", "288.");
+        elemtGrid.put("15:7", "Uup");
         Elements.put("O", "16.00");
+        elemtGrid.put("16:2", "O");
         Elements.put("S", "32.07");
+        elemtGrid.put("16:3", "S");
         Elements.put("Se", "78.96");
+        elemtGrid.put("16:4", "Se");
         Elements.put("Te", "127.6");
+        elemtGrid.put("16:5", "Te");
         Elements.put("Po", "209");
-        Elements.put("Uuh", "293.");
+        elemtGrid.put("16:6", "Po");
+        Elements.put("Lv", "293.");
+        elemtGrid.put("16:7", "Lv");
         Elements.put("F", "19.00");
+        elemtGrid.put("17:2", "F");
         Elements.put("Cl", "35.45");
+        elemtGrid.put("17:3", "Cl");
         Elements.put("Br", "79.90");
+        elemtGrid.put("17:4", "Br");
         Elements.put("I", "126.9");
+        elemtGrid.put("17:5", "I");
         Elements.put("At", "210.");
+        elemtGrid.put("17:6", "At");
         Elements.put("Uus", "294.");
+        elemtGrid.put("17:7", "Uus");
         Elements.put("He", "4.003");
+        elemtGrid.put("18:1", "He");
         Elements.put("Ne", "20.18");
+        elemtGrid.put("18:2", "Ne");
         Elements.put("Ar", "39.95");
+        elemtGrid.put("18:3", "Ar");
         Elements.put("Kr", "83.80");
+        elemtGrid.put("18:4", "Kr");
         Elements.put("Xe", "131.3");
+        elemtGrid.put("18:5", "Xe");
         Elements.put("Rn", "222.");
+        elemtGrid.put("18:6", "Rn");
         Elements.put("Uuo", "294.");
+        elemtGrid.put("18:7", "Uuo");
         Elements.put("La", "138.9");
+        elemtGrid.put("3:8", "La");
         Elements.put("Ce", "140.1");
+        elemtGrid.put("4:8", "Ce");
         Elements.put("Pr", "140.9");
+        elemtGrid.put("5:8", "Pr");
         Elements.put("Nd", "144.2");
+        elemtGrid.put("6:8", "Nd");
         Elements.put("Pm", "145.");
+        elemtGrid.put("7:8", "Pm");
         Elements.put("Sm", "150.4");
+        elemtGrid.put("8:8", "Sm");
         Elements.put("Eu", "152.0");
+        elemtGrid.put("9:8", "Eu");
         Elements.put("Gd", "157.3");
+        elemtGrid.put("10:8", "Gd");
         Elements.put("Tb", "158.9");
+        elemtGrid.put("11:8", "Tb");
         Elements.put("Dy", "162.5");
+        elemtGrid.put("12:8", "Dy");
         Elements.put("Ho", "164.9");
+        elemtGrid.put("13:8", "Ho");
         Elements.put("Er", "167.3");
+        elemtGrid.put("14:8", "Er");
         Elements.put("Tm", "168.9");
+        elemtGrid.put("15:8", "Tm");
         Elements.put("Yb", "173.0");
+        elemtGrid.put("16:8", "Yb");
         Elements.put("Lu", "175.0");
+        elemtGrid.put("17:8", "Lu");
         Elements.put("Ac", "227.");
+        elemtGrid.put("3:9", "Ac");
         Elements.put("Th", "232.0");
+        elemtGrid.put("4:9", "Th");
         Elements.put("Pa", "231.");
+        elemtGrid.put("5:9", "Pa");
         Elements.put("U", "238.0");
+        elemtGrid.put("6:9", "U");
         Elements.put("Np", "237.");
+        elemtGrid.put("7:9", "Np");
         Elements.put("Pu", "244.");
+        elemtGrid.put("8:9", "Pu");
         Elements.put("Am", "243.");
+        elemtGrid.put("9:9", "Am");
         Elements.put("Cm", "247.");
+        elemtGrid.put("10:9", "Cm");
         Elements.put("Bl", "247.");
+        elemtGrid.put("11:9", "Bl");
         Elements.put("Cf", "251.");
+        elemtGrid.put("12:9", "Cf");
         Elements.put("Es", "252.");
+        elemtGrid.put("13:9", "Es");
         Elements.put("Fm", "257.");
+        elemtGrid.put("14:9", "Fm");
         Elements.put("Md", "258.");
+        elemtGrid.put("15:9", "Md");
         Elements.put("No", "259.");
+        elemtGrid.put("16:9", "No");
         Elements.put("Lr", "260.");
+        elemtGrid.put("17:9", "Lr");
     }
     
     /**
