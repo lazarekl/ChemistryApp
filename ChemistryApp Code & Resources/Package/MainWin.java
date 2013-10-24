@@ -80,6 +80,14 @@ public class MainWin extends javax.swing.JFrame {
         Full = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         FullEnter = new javax.swing.JButton();
+        BlockLabel1 = new javax.swing.JLabel();
+        BlockLabel2 = new javax.swing.JLabel();
+        BlockLabel3 = new javax.swing.JLabel();
+        BlockLabel4 = new javax.swing.JLabel();
+        BlockLabel5 = new javax.swing.JLabel();
+        BlockLabel6 = new javax.swing.JLabel();
+        BlockLabel7 = new javax.swing.JLabel();
+        BlockLabel8 = new javax.swing.JLabel();
         FullMa = new javax.swing.JLabel();
         ShowEmp = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -183,7 +191,8 @@ public class MainWin extends javax.swing.JFrame {
 
         Pg1ScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jLabel19.setText("<HTML><body style='width: 290px'><u>Features:</u><br>\nThe primary feature of this program is the molar mass calculator. To make use of this feature, simply enter the formula (of whatever compound \nor element you wish to calculate the molar mass of) into the blank text field, and either hit enter or press the \"Enter\" button. The formula you \nentered will show up in the box below the entry field, labelled \"Formula\", and the molar mass will be in the box to the right, labelled \"Molar Mass\".\nClicking on the box containing the molar mass will bring up a window containing the percent composition by mass of the compound. All values\ncalculated by this program automatically take significant figures into account. To turn this off, simply check the \"Ignore Significant Figures\" box\nbelow the \"Formula\" and \"Molar Mass\" display boxes. With this enabled, all calculations will be made to six decimal places.<br>\n\n<br><br>Secondary features include:<br>\nA periodic table of the elements.<br>\nA table of common Polyatomic Ions, their formulas, and their charges.<br>\nA table of water vapor pressures from 0º Celsius to 100º Celsius.<br>\nA standard deviation calculator.<br><br>\n\nThe standard deviation calculator takes any number of parameters, all of which must be valid numbers, and calculates the\nstandard deviation between them. To make use of this feature, simply click on the \"Standard Deviation\" button and enter\nthe values to be used in the calculation, seperated by commas and spaces, and then click \"Ok\". A new window will pop-up\nwith the results of the calculation.");
+        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("<HTML><body style='width: 290px'><u>Features:</u><br>\nThe primary feature of this program is the molar mass calculator. To make use of this feature, simply enter the formula (of whatever compound \nor element you wish to calculate the molar mass of) into the blank text field, and either hit enter or press the \"Enter\" button. Alternatively, the individual elements can be clicked on in the periodic table to the right. The formula you \nentered will show up in the box below the entry field, labelled \"Formula\", and the molar mass will be in the box to the right, labelled \"Molar Mass\".\nClicking on the box containing the molar mass will bring up a window containing the percent composition by mass of the compound. All values\ncalculated by this program automatically take significant figures into account. To turn this off, simply check the \"Ignore Significant Figures\" box\nbelow the \"Formula\" and \"Molar Mass\" display boxes. With this enabled, all calculations will be made to six decimal places.<br>\n\n<br><br>Secondary features include:<br>\n- A periodic table of the elements.<br>\n- A table of common Polyatomic Ions, their formulas, and their charges.<br>\n- A table of water vapor pressures from 0º Celsius to 100º Celsius.<br>\n- A standard deviation calculator.<br><br>\n\nThe standard deviation calculator takes any number of parameters, all of which must be valid numbers, and calculates the\nstandard deviation between them. To make use of this feature, simply click on the \"Standard Deviation\" button and enter\nthe values to be used in the calculation, seperated by commas and spaces, and then click \"Ok\". A new window will pop-up\nwith the results of the calculation.");
         jLabel19.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Pg1ScrollPane.setViewportView(jLabel19);
 
@@ -268,6 +277,26 @@ public class MainWin extends javax.swing.JFrame {
         getContentPane().add(FullEnter);
         FullEnter.setBounds(140, 58, 95, 29);
 
+        BlockLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BlockLabel1.setText("<HTML><br><b>Or click on an element in the table below:");
+        BlockLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(BlockLabel1);
+        BlockLabel1.setBounds(323, 10, 351, 90);
+        getContentPane().add(BlockLabel2);
+        BlockLabel2.setBounds(250, 225, 70, 75);
+        getContentPane().add(BlockLabel3);
+        BlockLabel3.setBounds(323, 164, 32, 66);
+        getContentPane().add(BlockLabel4);
+        BlockLabel4.setBounds(855, 226, 35, 74);
+        getContentPane().add(BlockLabel5);
+        BlockLabel5.setBounds(662, 10, 190, 30);
+        getContentPane().add(BlockLabel6);
+        BlockLabel6.setBounds(287, 10, 37, 30);
+        getContentPane().add(BlockLabel7);
+        BlockLabel7.setBounds(323, 225, 530, 5);
+        getContentPane().add(BlockLabel8);
+        BlockLabel8.setBounds(323, 293, 530, 8);
+
         FullMa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FullMa.setToolTipText("The molar mass of the displayed compound. Click here for the percent composition by mass");
         FullMa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -304,6 +333,7 @@ public class MainWin extends javax.swing.JFrame {
         jLabel4.setBounds(13, 30, 140, 16);
 
         PTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Package/Periodic-TableEdited.png"))); // NOI18N
+        PTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         PTable.setPreferredSize(new java.awt.Dimension(900, 289));
         PTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1003,6 +1033,14 @@ public class MainWin extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BlockLabel1;
+    private javax.swing.JLabel BlockLabel2;
+    private javax.swing.JLabel BlockLabel3;
+    private javax.swing.JLabel BlockLabel4;
+    private javax.swing.JLabel BlockLabel5;
+    private javax.swing.JLabel BlockLabel6;
+    private javax.swing.JLabel BlockLabel7;
+    private javax.swing.JLabel BlockLabel8;
     private javax.swing.JButton CloseVaporB;
     private javax.swing.JTextField Full;
     private javax.swing.JButton FullEnter;
