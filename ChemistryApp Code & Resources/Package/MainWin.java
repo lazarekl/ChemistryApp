@@ -148,6 +148,7 @@ public class MainWin extends javax.swing.JFrame {
         InfoWin.setLocation(new java.awt.Point(80, 22));
         InfoWin.setLocationByPlatform(true);
         InfoWin.setMinimumSize(new java.awt.Dimension(400, 325));
+        InfoWin.setResizable(false);
         InfoWin.getContentPane().setLayout(null);
 
         jPanel1.setLayout(null);
