@@ -120,7 +120,6 @@
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[400, 325]"/>
         </Property>
-        <Property name="resizable" type="boolean" value="false"/>
       </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -211,11 +210,11 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel17">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Contact information"/>
+                    <Property name="text" type="java.lang.String" value="Contact information and disclaimers"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="40" y="150" width="150" height="-1"/>
+                      <AbsoluteConstraints x="40" y="150" width="240" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -261,8 +260,9 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="&lt;HTML&gt;&lt;body style=&apos;width: 290px&apos;&gt;&lt;u&gt;Features:&lt;/u&gt;&lt;br&gt;&#xa;The primary feature of this program is the molar mass calculator. To make use of this feature, simply enter the formula (of whatever compound &#xa;or element you wish to calculate the molar mass of) into the blank text field, and either hit enter or press the &quot;Enter&quot; button. Alternatively, the individual elements can be clicked on in the periodic table to the right. The formula you &#xa;entered will show up in the box below the entry field, labelled &quot;Formula&quot;, and the molar mass will be in the box to the right, labelled &quot;Molar Mass&quot;.&#xa;Clicking on the box containing the molar mass will bring up a window containing the percent composition by mass of the compound. All values&#xa;calculated by this program automatically take significant figures into account. To turn this off, simply check the &quot;Ignore Significant Figures&quot; box&#xa;below the &quot;Formula&quot; and &quot;Molar Mass&quot; display boxes. With this enabled, all calculations will be made to six decimal places.&lt;br&gt;&#xa;&#xa;&lt;br&gt;&lt;br&gt;Secondary features include:&lt;br&gt;&#xa;- A periodic table of the elements.&lt;br&gt;&#xa;- A table of common Polyatomic Ions, their formulas, and their charges.&lt;br&gt;&#xa;- A table of water vapor pressures from 0&#xba; Celsius to 100&#xba; Celsius.&lt;br&gt;&#xa;- A standard deviation calculator.&lt;br&gt;&lt;br&gt;&#xa;&#xa;The standard deviation calculator takes any number of parameters, all of which must be valid numbers, and calculates the&#xa;standard deviation between them. To make use of this feature, simply click on the &quot;Standard Deviation&quot; button and enter&#xa;the values to be used in the calculation, seperated by commas and spaces, and then click &quot;Ok&quot;. A new window will pop-up&#xa;with the results of the calculation."/>
+                        <Property name="text" type="java.lang.String" value="&lt;HTML&gt;&lt;body style=&apos;width: 290px&apos;&gt;&lt;u&gt;Features:&lt;/u&gt;&lt;br&gt;&#xa;The primary feature of this program is the molar mass calculator. To make use of this feature, simply enter the formula (of whatever compound &#xa;or element you wish to calculate the molar mass of) into the blank text field, and either hit enter or press the &quot;Enter&quot; button. Alternatively, the individual elements can be clicked on in the periodic table to the right. The formula you &#xa;entered will show up in the box below the entry field, labelled &quot;Formula&quot;, and the molar mass will be in the box to the right, labelled &quot;Molar Mass&quot;.&#xa;Clicking on the box containing the formula will automatically re-enter the formula into the entry field, and clicking on the box containing the molar mass will bring up a window containing the percent composition by mass of the compound. All values&#xa;calculated by this program automatically take significant figures into account. To turn this off, simply check the &quot;Ignore Significant Figures&quot; box&#xa;below the &quot;Formula&quot; and &quot;Molar Mass&quot; display boxes. With this enabled, all calculations will be made to six decimal places.&lt;br&gt;&#xa;&#xa;&lt;br&gt;&lt;br&gt;Secondary features include:&lt;br&gt;&#xa;- A periodic table of the elements.&lt;br&gt;&#xa;- A table of common Polyatomic Ions, their formulas, and their charges.&lt;br&gt;&#xa;- A table of water vapor pressures from 0&#xba; Celsius to 100&#xba; Celsius.&lt;br&gt;&#xa;- A standard deviation calculator.&lt;br&gt;&lt;br&gt;&#xa;&#xa;The standard deviation calculator takes any number of parameters, all of which must be valid numbers, and calculates the&#xa;standard deviation between them. To make use of this feature, simply click on the &quot;Standard Deviation&quot; button and enter&#xa;the values to be used in the calculation, seperated by commas and spaces, and then click &quot;Ok&quot;. A new window will pop-up&#xa;with the results of the calculation."/>
                         <Property name="verticalAlignment" type="int" value="1"/>
+                        <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -296,8 +296,12 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="jLabel20">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&lt;HTML&gt;&lt;body style=&apos;width: 290px&apos;&gt;&lt;u&gt;Features:&lt;/u&gt;&lt;br&gt;&#xa;This program is designed to be as simple and intuitive to use as possible, although there are some specific guidelines that must be followed in order to not encounter errors. Primarily, subscripts should be entered into the calculator simply as an integer after the element symbol. &lt;br&gt;&#xa;Furthermore, for formulas containing parentheses, the subscript must be distributed to the elements inside of the parantheses, so as to eliminate the parenthesis.&lt;br&gt;&#xa;Finally, no spaces or other symbols should be entered.&lt;br&gt;&#xa;For example, the following formula:&lt;br&gt;&#xa;Cu(SO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;2&lt;/sub&gt;&lt;br&gt;&#xa;Should be entered as:&lt;br&gt;&#xa;CuS2O8&lt;br&gt;&#xa;Otherwise, simply enter whichever formula you would like in any format whatsoever.&#xa;&lt;br&gt;&lt;br&gt;&#xa;Additionally, note that the standard deviation calculator will only take standard numbers, with no extraneous symbols, seperated by commas and spaces."/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="&lt;HTML&gt;&lt;body style=&apos;width: 290px&apos;&gt;&#xa;This program is designed to be as simple and intuitive to use as possible, although there are some specific guidelines that must be followed in order to not encounter errors. Primarily, subscripts should be entered into the calculator simply as an integer after the element symbol. &lt;br&gt;&#xa;Furthermore, for formulas containing parentheses, the subscript must be distributed to the elements inside of the parantheses, so as to eliminate the parenthesis.&lt;br&gt;&#xa;Finally, no spaces or other symbols should be entered.&lt;br&gt;&#xa;For example, the following formula:&lt;br&gt;&#xa;Cu(SO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;2&lt;/sub&gt;&lt;br&gt;&#xa;Should be entered as:&lt;br&gt;&#xa;CuS2O8&lt;br&gt;&#xa;Otherwise, simply enter whichever formula you would like in any format whatsoever.&#xa;&lt;br&gt;&lt;br&gt;&#xa;Additionally, note that the standard deviation calculator will only take standard numbers, with no extraneous symbols, seperated by commas and spaces."/>
                         <Property name="verticalAlignment" type="int" value="1"/>
+                        <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -341,15 +345,19 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="jLabel22">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&lt;HTML&gt;&lt;body style=&apos;width: 290px&apos;&gt;&lt;u&gt;Features:&lt;/u&gt;&lt;br&gt;&#xa;This program was produced by Lukas Lazarek, who can be reached at LukasALazarek@gmail.com.&lt;br&gt;&#xa;I do not claim any of the results produced by this program to be perfectly accurate, although I strive to make them as accurate as possible, nor do I claim ownership over any of the images used in this program.&lt;br&gt;"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="&lt;HTML&gt;&lt;body style=&apos;width: 290px&apos;&gt;&#xa;This program was produced by Lukas Lazarek, who can be reached at LukasALazarek@gmail.com.&lt;br&gt;&#xa;I do not claim any of the results produced by this program to be perfectly accurate, although I strive to make them as accurate as possible, nor do I claim ownership over any of the images used in this program.&lt;br&gt;"/>
                         <Property name="verticalAlignment" type="int" value="1"/>
+                        <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
                 <Component class="javax.swing.JLabel" name="jLabel23">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&lt;HTML&gt;&lt;b&gt;Contact Information&lt;/b&gt;"/>
+                    <Property name="text" type="java.lang.String" value="&lt;HTML&gt;&lt;b&gt;Contact Information and Disclaimers&lt;/b&gt;"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -536,6 +544,10 @@
         </Property>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ShowEmpMouseClicked"/>
+        <EventHandler event="mouseDragged" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="ShowEmpMouseDragged"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="10" y="120" width="95" height="23"/>

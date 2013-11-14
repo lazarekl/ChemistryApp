@@ -148,7 +148,6 @@ public class MainWin extends javax.swing.JFrame {
         InfoWin.setLocation(new java.awt.Point(80, 22));
         InfoWin.setLocationByPlatform(true);
         InfoWin.setMinimumSize(new java.awt.Dimension(400, 325));
-        InfoWin.setResizable(false);
         InfoWin.getContentPane().setLayout(null);
 
         jPanel1.setLayout(null);
@@ -177,9 +176,9 @@ public class MainWin extends javax.swing.JFrame {
         jPanel1.add(jLabel16);
         jLabel16.setBounds(10, 80, 60, 16);
 
-        jLabel17.setText("Contact information");
+        jLabel17.setText("Contact information and disclaimers");
         jPanel1.add(jLabel17);
-        jLabel17.setBounds(40, 150, 150, 16);
+        jLabel17.setBounds(40, 150, 240, 16);
 
         jTabbedPane1.addTab("Table of Contents", jPanel1);
 
@@ -192,8 +191,9 @@ public class MainWin extends javax.swing.JFrame {
         Pg1ScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jLabel19.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("<HTML><body style='width: 290px'><u>Features:</u><br>\nThe primary feature of this program is the molar mass calculator. To make use of this feature, simply enter the formula (of whatever compound \nor element you wish to calculate the molar mass of) into the blank text field, and either hit enter or press the \"Enter\" button. Alternatively, the individual elements can be clicked on in the periodic table to the right. The formula you \nentered will show up in the box below the entry field, labelled \"Formula\", and the molar mass will be in the box to the right, labelled \"Molar Mass\".\nClicking on the box containing the molar mass will bring up a window containing the percent composition by mass of the compound. All values\ncalculated by this program automatically take significant figures into account. To turn this off, simply check the \"Ignore Significant Figures\" box\nbelow the \"Formula\" and \"Molar Mass\" display boxes. With this enabled, all calculations will be made to six decimal places.<br>\n\n<br><br>Secondary features include:<br>\n- A periodic table of the elements.<br>\n- A table of common Polyatomic Ions, their formulas, and their charges.<br>\n- A table of water vapor pressures from 0º Celsius to 100º Celsius.<br>\n- A standard deviation calculator.<br><br>\n\nThe standard deviation calculator takes any number of parameters, all of which must be valid numbers, and calculates the\nstandard deviation between them. To make use of this feature, simply click on the \"Standard Deviation\" button and enter\nthe values to be used in the calculation, seperated by commas and spaces, and then click \"Ok\". A new window will pop-up\nwith the results of the calculation.");
+        jLabel19.setText("<HTML><body style='width: 290px'><u>Features:</u><br>\nThe primary feature of this program is the molar mass calculator. To make use of this feature, simply enter the formula (of whatever compound \nor element you wish to calculate the molar mass of) into the blank text field, and either hit enter or press the \"Enter\" button. Alternatively, the individual elements can be clicked on in the periodic table to the right. The formula you \nentered will show up in the box below the entry field, labelled \"Formula\", and the molar mass will be in the box to the right, labelled \"Molar Mass\".\nClicking on the box containing the formula will automatically re-enter the formula into the entry field, and clicking on the box containing the molar mass will bring up a window containing the percent composition by mass of the compound. All values\ncalculated by this program automatically take significant figures into account. To turn this off, simply check the \"Ignore Significant Figures\" box\nbelow the \"Formula\" and \"Molar Mass\" display boxes. With this enabled, all calculations will be made to six decimal places.<br>\n\n<br><br>Secondary features include:<br>\n- A periodic table of the elements.<br>\n- A table of common Polyatomic Ions, their formulas, and their charges.<br>\n- A table of water vapor pressures from 0º Celsius to 100º Celsius.<br>\n- A standard deviation calculator.<br><br>\n\nThe standard deviation calculator takes any number of parameters, all of which must be valid numbers, and calculates the\nstandard deviation between them. To make use of this feature, simply click on the \"Standard Deviation\" button and enter\nthe values to be used in the calculation, seperated by commas and spaces, and then click \"Ok\". A new window will pop-up\nwith the results of the calculation.");
         jLabel19.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel19.setOpaque(true);
         Pg1ScrollPane.setViewportView(jLabel19);
 
         jPanel2.add(Pg1ScrollPane);
@@ -205,8 +205,10 @@ public class MainWin extends javax.swing.JFrame {
 
         Pg2ScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jLabel20.setText("<HTML><body style='width: 290px'><u>Features:</u><br>\nThis program is designed to be as simple and intuitive to use as possible, although there are some specific guidelines that must be followed in order to not encounter errors. Primarily, subscripts should be entered into the calculator simply as an integer after the element symbol. <br>\nFurthermore, for formulas containing parentheses, the subscript must be distributed to the elements inside of the parantheses, so as to eliminate the parenthesis.<br>\nFinally, no spaces or other symbols should be entered.<br>\nFor example, the following formula:<br>\nCu(SO<sub>4</sub>)<sub>2</sub><br>\nShould be entered as:<br>\nCuS2O8<br>\nOtherwise, simply enter whichever formula you would like in any format whatsoever.\n<br><br>\nAdditionally, note that the standard deviation calculator will only take standard numbers, with no extraneous symbols, seperated by commas and spaces.");
+        jLabel20.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("<HTML><body style='width: 290px'>\nThis program is designed to be as simple and intuitive to use as possible, although there are some specific guidelines that must be followed in order to not encounter errors. Primarily, subscripts should be entered into the calculator simply as an integer after the element symbol. <br>\nFurthermore, for formulas containing parentheses, the subscript must be distributed to the elements inside of the parantheses, so as to eliminate the parenthesis.<br>\nFinally, no spaces or other symbols should be entered.<br>\nFor example, the following formula:<br>\nCu(SO<sub>4</sub>)<sub>2</sub><br>\nShould be entered as:<br>\nCuS2O8<br>\nOtherwise, simply enter whichever formula you would like in any format whatsoever.\n<br><br>\nAdditionally, note that the standard deviation calculator will only take standard numbers, with no extraneous symbols, seperated by commas and spaces.");
         jLabel20.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel20.setOpaque(true);
         Pg2ScrollPane.setViewportView(jLabel20);
 
         jPanel3.add(Pg2ScrollPane);
@@ -222,14 +224,16 @@ public class MainWin extends javax.swing.JFrame {
 
         Pg3ScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jLabel22.setText("<HTML><body style='width: 290px'><u>Features:</u><br>\nThis program was produced by Lukas Lazarek, who can be reached at LukasALazarek@gmail.com.<br>\nI do not claim any of the results produced by this program to be perfectly accurate, although I strive to make them as accurate as possible, nor do I claim ownership over any of the images used in this program.<br>");
+        jLabel22.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("<HTML><body style='width: 290px'>\nThis program was produced by Lukas Lazarek, who can be reached at LukasALazarek@gmail.com.<br>\nI do not claim any of the results produced by this program to be perfectly accurate, although I strive to make them as accurate as possible, nor do I claim ownership over any of the images used in this program.<br>");
         jLabel22.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel22.setOpaque(true);
         Pg3ScrollPane.setViewportView(jLabel22);
 
         jPanel4.add(Pg3ScrollPane);
         Pg3ScrollPane.setBounds(0, 30, 400, 180);
 
-        jLabel23.setText("<HTML><b>Contact Information</b>");
+        jLabel23.setText("<HTML><b>Contact Information and Disclaimers</b>");
         jPanel4.add(jLabel23);
         jLabel23.setBounds(10, 10, 300, 16);
 
@@ -317,6 +321,16 @@ public class MainWin extends javax.swing.JFrame {
         ShowEmp.setToolTipText("The empirical formula for which the molar mass is displayed");
         ShowEmp.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         ShowEmp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ShowEmp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ShowEmpMouseClicked(evt);
+            }
+        });
+        ShowEmp.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                ShowEmpMouseDragged(evt);
+            }
+        });
         getContentPane().add(ShowEmp);
         ShowEmp.setBounds(10, 120, 95, 23);
 
@@ -628,6 +642,19 @@ public class MainWin extends javax.swing.JFrame {
         Full.setText(Full.getText() + getClickedElement(x, y));
             
     }//GEN-LAST:event_PTableMouseClicked
+
+    private void ShowEmpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShowEmpMouseClicked
+        String str = ShowEmp.getText();
+        if(!str.equals("")){
+            String oldTxt = Full.getText();
+            String newTxt = oldTxt + str;
+            Full.setText(newTxt);
+        }
+    }//GEN-LAST:event_ShowEmpMouseClicked
+
+    private void ShowEmpMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShowEmpMouseDragged
+        ShowEmpMouseClicked(evt);
+    }//GEN-LAST:event_ShowEmpMouseDragged
 
     public static void infoBox(String infoMessage, String header)
     {
